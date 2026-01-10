@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgmq3em7x8ebe"]
+[gd_scene load_steps=4 format=3 uid="uid://dgmq3em7x8ebe"]
 
 [ext_resource type="Script" path="res://scenes/player/Player.cs" id="1_awndy"]
+[ext_resource type="SpriteFrames" uid="uid://cwixy2guad6i7" path="res://assets/Sprites/Merchant/merchant_walk.tres" id="2_uwkf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w25y6"]
 
@@ -9,3 +10,7 @@ script = ExtResource("1_awndy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w25y6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_uwkf1")
+animation = &"walk"

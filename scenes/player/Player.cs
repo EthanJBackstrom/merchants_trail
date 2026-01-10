@@ -1,11 +1,19 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+
 
 public partial class Player : CharacterBody2D
 {
+
+	Dictionary<string, int> _wallet = new Dictionary<string, int>();
+	Dictionary<string, int> _inventory = new Dictionary<string, int>();
+	Dictionary<string, int> _insurance = new Dictionary<string, int>();
+	Dictionary<string, int> _wellbeing = new Dictionary<string, int>();
+	
 	[Export]
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	public float Speed = 300.0f;
+	public float JumpVelocity = -400.0f;
 	
 	[Export]
 	private int _maxHealth = 100;
@@ -20,22 +28,25 @@ public partial class Player : CharacterBody2D
 	{
 		_currentHealth = _maxHealth;
 		_currentHunger = _maxHunger;
+		_wallet["Gold"] = 0;
+		_wallet["Silver"] = 0;
+		_wallet["Copper"] = 0;
 	}
 	
-	public override voide _PhysicsProcess(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		HandleMovement();
 		HandleHunger(delta);
 	}
 	
-	private void HandlingMovement()
+	private void HandleMovement()
 	{
 		var input = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		Velocity = input* _speed;
+		Velocity = input * Speed;
 		MoveAndSlide();
 	}
 	
-	private void HandlingHunger(double delta)
+	private void HandleHunger(double delta)
 	{
 		_currentHunger -= _hungerDecayRate * (float)delta;
 		
@@ -46,19 +57,27 @@ public partial class Player : CharacterBody2D
 		}
 	}
 	
-	public void TakeDamge(int amount)
+	public void TakeDamage(int amount)
 	{
 		_currentHealth -= amount;
 		if (_currentHealth <= 0)
 			Die();
 	}
 	
+	public void AddCoins(int amount, string type = "Gold")
+	{
+		_wallet[type] += amount;
+	}
+	
 	public void Eat(float amount)
 	{
-		_currentHunger = mathf.Min(_currentHunger + amount, _maxHunger);
+		_currentHunger = Mathf.Min(_currentHunger + amount, _maxHunger);
+		
+		float healthGain = amount * 0.5f;
+		_currentHealth = Mathf.Min(_currentHealth + (int)healthGain, _maxHealth);
 	}
 	
 	private void Die()
 	{
-		GD.Print("Player is Dead")
-	}
+		GD.Print("Player is Dead");
+	}}

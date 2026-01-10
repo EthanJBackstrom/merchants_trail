@@ -1,0 +1,81 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://cwixy2guad6i7"]
+
+[ext_resource type="Texture2D" uid="uid://do6ih42bnevf7" path="res://assets/Sprites/Merchant/rogue spritesheet calciumtrice.png" id="1_k34u3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxod1"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phe8d"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8qs6"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kun8"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7slu"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vp15"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1pss"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd63t"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk00c"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ainok"]
+atlas = ExtResource("1_k34u3")
+region = Rect2(288, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxod1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phe8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8qs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kun8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7slu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vp15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1pss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd63t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk00c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ainok")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
